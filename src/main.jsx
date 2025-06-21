@@ -4,7 +4,8 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
-import Wrapper from './utils/wrapper.jsx'
+import Wrapper from './utils/Wrapper.jsx'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

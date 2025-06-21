@@ -1,10 +1,8 @@
-import { createContext, useState } from "react"
+import { createContext, useState } from 'react'
 
-
-export const RecipeContext=createContext(null)
-
+export const RecipeContext = createContext(null)
 function Wrapper(props) {
-    const [Recipe, setRecipe] = useState([{
+  const [Recipe, setRecipe] = useState([{
   id: "1",
   title: "Spaghetti Bolognese",
   image: "https://cdn.pixabay.com/photo/2016/08/19/09/24/spaghetti-1604836_1280.jpg",

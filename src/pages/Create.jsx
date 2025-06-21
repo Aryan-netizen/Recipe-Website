@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import Recipe from "./Recipe";
-import { RecipeContext } from "../utils/wrapper";
+import { RecipeContext } from "../utils/Wrapper";
 import { useNavigate } from "react-router-dom";
 
 function Create() {

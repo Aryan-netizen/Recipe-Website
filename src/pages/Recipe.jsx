@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { RecipeContext } from "../utils/wrapper"
+import { RecipeContext } from "../utils/Wrapper"
 import { useNavigate, useParams } from "react-router-dom"
 
 function Recipe() {

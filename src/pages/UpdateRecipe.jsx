@@ -2,7 +2,7 @@ import { nanoid } from "nanoid";
 import { useContext, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { RecipeContext } from "../utils/wrapper";
+import { RecipeContext } from "../utils/Wrapper";
 import { useNavigate, useParams } from "react-router-dom";
 
 function UpdateRecipe() {
