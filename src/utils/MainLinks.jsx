@@ -9,7 +9,7 @@ function MainLinks() {
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/recipe' element={<Recipe />} />
         <Route path='/recipe-details/:id' element={<RecipeDetails />} />
         <Route path='/recipe-update/:id' element={<UpdateRecipe/>} />
