@@ -9,14 +9,21 @@ function UpdateRecipe() {
     const {id}=useParams()
     const [Recipe,setRecipe]= useContext(RecipeContext)
     const recipe=Recipe.find((i)=>(i.id==id))
-    const navigate=useNavigate("/recipe")
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors,isSubmitting },
-  } = useForm({defaultValues: {...recipe,ingredients:recipe.ingredients.join(", "),steps:recipe.steps.join(", ")}});
+    const navigate=useNavigate()
+    if (!recipe) return <div>Recipe not found.</div>;
 
+const {
+  register,
+  handleSubmit,
+  reset,
+  formState: { errors, isSubmitting },
+} = useForm({
+  defaultValues: {
+    ...recipe,
+    ingredients: Array.isArray(recipe.ingredients) ? recipe.ingredients.join(", ") : "",
+    steps: Array.isArray(recipe.steps) ? recipe.steps.join(", ") : "",
+  }
+});
   async function onSubmit(data){
     data.id = id;
     data.ingredients = data.ingredients.split(",").map(str=>str.trim()).filter(str=>str.length>0)

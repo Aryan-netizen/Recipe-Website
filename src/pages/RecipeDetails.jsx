@@ -11,10 +11,9 @@ function RecipeDetails() {
     const navigate = useNavigate()
     useEffect(() => {
         setitem(Recipe.find((item) => item.id == id))
+        localStorage.setItem('Recipe', JSON.stringify(Recipe));
     }, [Recipe, id])
-    useEffect(() => {
-    localStorage.setItem('Recipe', JSON.stringify(Recipe));
-}, [Recipe]);
+
 
     const Delete = (id) => {
     const newlist = Recipe.filter((i) => i.id != id)
@@ -38,13 +37,13 @@ function RecipeDetails() {
                 <div className="flex flex-row ">
                 <ol className="list-decimal  bg-amber-200 w-fit p-4 rounded-2xl border-2 mt-2">
                     <h2 className="font-bold text-2xl mb-2">Ingredient List</h2>
-                {item.ingredients.map((ing, idx) => (
+                {Array.isArray(item.ingredients) && item.ingredients.map((ing, idx) => (
                     <li className="ml-7 capitalize" key={idx}>{ing}</li>
                 ))}
                 </ol>
                 <ol className="list-decimal ml-5 bg-green-200 w-fit p-4 rounded-2xl border-2 mt-2">
                     <h2 className="font-bold text-2xl mb-2">Steps To Create</h2>
-                {item.steps.map((ing, idx) => (
+                {Array.isArray(item.steps) && item.steps.map((ing, idx) => (
                     <li className="ml-7 capitalize" key={idx}>{ing}</li>
                 ))}
                 </ol>
