@@ -8,11 +8,11 @@ import Wrapper from './utils/wrapper.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <Wrapper>
     <BrowserRouter>
-    <App />
-    <ToastContainer/>
+      <Wrapper>
+        <App />
+        <ToastContainer/>
+      </Wrapper>
     </BrowserRouter>
-    </Wrapper>
-    </StrictMode>
+  </StrictMode>
 )
