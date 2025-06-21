@@ -9,7 +9,7 @@ function UpdateRecipe() {
     const {id}=useParams()
     const [Recipe,setRecipe]= useContext(RecipeContext)
     const recipe=Recipe.find((i)=>(i.id==id))
-    const navigate=useNavigate()
+    const navigate=useNavigate("/recipe")
   const {
     register,
     handleSubmit,
